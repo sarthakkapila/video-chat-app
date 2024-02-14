@@ -1,15 +1,21 @@
 import { useState } from "react";
+import { Link } from "react-router-dom";
 
 export const Landing = () => {
-    const [roomid, setRoomid] = useState('')
+    const [joined, setJoined] = useState(false);
+    const [name, setName] = useState('')
 
     return (
+        <>
         <div>
-            <input type="text" value={roomid} onChange={e => setRoomid(e.target.value)} />
+        <input type="text" onChange={(e) => {
+                setName(e.target.value);
+            }}>
+            </input>
             <button onClick={() => {
-// modify later
-            }}>Join room
-            </button>
+                setJoined(true);
+            }}>Join</button>
         </div>
+        </>
     );
 }
